@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#2563EB" flood-opacity="0.3" />
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="44" fill="url(#grad1)" filter="url(#glow)" />
+  <!-- Shield Icon -->
+  <path d="M100 45 L145 65 V105 C145 135 125 158 100 165 C75 158 55 135 55 105 V65 Z" fill="#FFFFFF" opacity="0.95" />
+  <!-- Lock Symbol Inside Shield -->
+  <rect x="85" y="102" width="30" height="25" rx="5" fill="#1E40AF" />
+  <path d="M91 102 V92 A9 9 0 0 1 109 92 V102" fill="none" stroke="#1E40AF" stroke-width="4" stroke-linecap="round" />
+  <circle cx="100" cy="113" r="2.5" fill="#FFFFFF" />
+  <path d="M100 115.5 V121" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+</svg>

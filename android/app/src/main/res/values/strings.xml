@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Exambro</string>
+    <string name="exit_exam">Keluar Ujian</string>
+    <string name="school_code_prompt">Masukkan Kode Sekolah atau Scan QR</string>
+    <string name="exit_password_title">Password Keluar (Token 5-Menit)</string>
+    <string name="exit_password_hint">Masukkan 6-Karakter Token</string>
+    <string name="exit_expired_warning">Password/token telah kadaluarsa (sudah melewati 5 menit). Silakan minta password/token terbaru kepada pengawas ujian/admin.</string>
+</resources>

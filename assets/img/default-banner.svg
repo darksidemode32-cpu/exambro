@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="1200" height="400" fill="url(#bgGrad)" />
+  <rect width="1200" height="400" fill="url(#grid)" />
+  
+  <g transform="translate(100, 140)">
+    <rect x="-15" y="-15" width="80" height="80" rx="20" fill="#38BDF8" opacity="0.15" />
+    <path d="M25 5 L55 20 V45 C55 65 40 80 25 85 C10 80 -5 65 -5 45 V20 Z" fill="#38BDF8" />
+    <text x="90" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="36" font-weight="800" fill="#FFFFFF" letter-spacing="1">
+      EXAMBRO PROCTOR SERVER
+    </text>
+    <text x="90" y="65" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="400" fill="#94A3B8">
+      Sistem Ujian Terkunci, Multi-Tenant &amp; Monitoring Real-Time
+    </text>
+  </g>
+</svg>

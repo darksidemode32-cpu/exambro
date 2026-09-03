@@ -1,0 +1,271 @@
+/* ==========================================================
+   EXAMBRO STUDENT KIOSK & ANDROID SIMULATOR - STYLES
+   Simulates Android Lock Task Mode & Kiosk Environment
+   ========================================================== */
+
+:root {
+  --kiosk-bg: #0F172A;
+  --kiosk-card: #1E293B;
+  --kiosk-primary: #38BDF8;
+  --kiosk-text: #F8FAFC;
+  --kiosk-muted: #94A3B8;
+  --kiosk-border: rgba(255, 255, 255, 0.1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--kiosk-bg);
+  color: var(--kiosk-text);
+}
+
+/* Remote Screen Brightness Filter Overlay */
+#brightnessFilterOverlay {
+  position: fixed;
+  inset: 0;
+  background: black;
+  opacity: 0; /* Opacity calculated dynamically: (100 - brightness) / 100 * 0.85 */
+  pointer-events: none;
+  z-index: 99999;
+  transition: opacity 0.5s ease;
+}
+
+/* Welcome / Setup Screen */
+.setup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: radial-gradient(circle at 50% 30%, #1E293B 0%, #0B0F19 100%);
+}
+
+.setup-card {
+  width: 100%;
+  max-width: 460px;
+  background: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--kiosk-border);
+  border-radius: 20px;
+  padding: 34px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+.setup-logo {
+  width: 76px;
+  height: 76px;
+  border-radius: 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.3);
+}
+
+.setup-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+
+.setup-subtitle {
+  font-size: 0.82rem;
+  color: var(--kiosk-muted);
+  margin-bottom: 24px;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--kiosk-muted);
+  margin-bottom: 6px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 16px;
+  background: #0F172A;
+  border: 1px solid var(--kiosk-border);
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--kiosk-primary);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+}
+
+.btn-start {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #0284C7 0%, #2563EB 100%);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 10px;
+}
+
+.btn-start:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6);
+}
+
+/* Active Kiosk Mode Layout */
+#kioskView {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  background: #000;
+  position: relative;
+}
+
+/* Kiosk Top Proctor Bar */
+.kiosk-bar {
+  height: 48px;
+  background: #0F172A;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+.kiosk-brand-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.kiosk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 3px 8px;
+  border-radius: 99px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #10B981;
+}
+
+.kiosk-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-kiosk-exit {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #F87171;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-kiosk-exit:hover {
+  background: #EF4444;
+  color: white;
+}
+
+/* Exam Iframe Wrapper */
+.exam-frame-wrapper {
+  flex: 1;
+  width: 100%;
+  height: calc(100vh - 48px);
+  position: relative;
+  background: #FFFFFF;
+}
+
+#examIframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Cheating / Violation Alert Modal */
+.violation-banner {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #EF4444;
+  color: white;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 10px 30px rgba(239, 68, 68, 0.6);
+  z-index: 100000;
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(-50%); }
+  20%, 60% { transform: translateX(calc(-50% - 10px)); }
+  40%, 80% { transform: translateX(calc(-50% + 10px)); }
+}
+
+/* Exit Password Modal */
+.exit-modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 100001;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.exit-modal-backdrop.show {
+  display: flex;
+}
+
+.exit-modal-card {
+  background: #1E293B;
+  border: 1px solid var(--kiosk-border);
+  border-radius: 18px;
+  padding: 30px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+}
